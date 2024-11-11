@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Audio Analyzer",
+  "version": "1.0",
+  "description": "Analyzes the audio of a YouTube video and overlays visualizations.",
+  "permissions": ["activeTab"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": [
+        "libs/meyda.min.js",
+        "libs/d3.min.js",
+        "utils/processPowerSpectrum.js",
+        "utils/addSlider.js",
+        "utils/draw.js",
+        "content.js"
+      ],
+      "css": ["overlay.css"]
+    }
+  ]
+}
